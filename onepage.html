@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Onepage-Annie Chang</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Nunito:wght@300&display=swap');
+        :root{
+            --main-color: rgb(231, 107, 25);
+            --main-color-hover: rgb(237, 173, 54);
+        }
+        body{
+            font-family: 'Noto Sans TC', sans-serif;
+            font-family: 'Nunito', sans-serif;
+        }
+        a, a:link{
+            text-decoration: none;
+        }
+        header img{
+            display: flex;
+            width: 100%;
+        }
+        .nav-top{
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--main-color);
+        }
+        .nav-top ul{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 8px;
+            margin-top: 15px;
+            list-style: none;
+        }
+        .nav-top a{
+            color: white;
+            font-size: 24px;
+            padding: 24px 26px;
+        }
+        .nav-top a:hover{
+            background-color: var(--main-color-hover);
+            transition: 0.5s; 
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-top ul{
+                padding: 0;
+                margin-top: 16px;
+            }
+            .nav-top a{
+                font-size: 17px;
+                padding: 16px 20px;
+            }
+        }
+
+        .return-top{
+            width: 80px;
+            height: 50px;
+            border-radius: 30%;
+            background-color: rgb(158, 74, 18);
+            font-size: 20px;
+            font-family: 'Nunito', sans-serif;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            position: fixed;
+            right: 0;
+            bottom: 8%;
+            opacity: 0.4;
+        }
+        .return-top:hover{
+            opacity: 0.65;
+            transition: 0.7s;
+        }
+        .title{
+            font-family: 'Noto Sans TC', sans-serif;
+            color: rgb(82, 49, 9);
+            font-size: 2rem;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-top: 80px;
+            margin-bottom: 40px;
+            margin-left: 200px;
+            width: 330px;
+            border-bottom: 2px solid rgb(215, 212, 212);
+        }
+
+        @media screen and (max-width: 768px) {
+            .title{
+                /* margin-left: 0px; */
+                margin: 100px auto 30px auto;
+                text-align: center;
+            }
+        }
+
+        .introduce-container{
+            height: 820px;
+            display: flex;
+        }
+        .wordsGroup{
+            position: relative;
+            max-width: 960px;
+            margin: 0 auto;
+            height: 800px;
+        }
+        .word1-circle{
+            position: relative;
+            height: 330px;
+            width: 330px;
+            background-color: var(--main-color);
+            border-radius: 50%;
+            opacity: 0.5;
+            left: 155px;
+        }
+        .word1{
+            color: black;
+            font-size: 20px;
+            padding-top: 58px;
+            padding-left: 63px;
+            line-height: 35px;
+        }
+        .word2-circle{
+            position: relative;
+            height: 450px;
+            width: 450px;
+            background-color: var(--main-color);
+            border-radius: 50%;
+            opacity: 0.5;
+            top: -35px;
+            left: 155px;
+        }
+        .word2{
+            color: black;
+            font-size: 20px;
+            padding-top: 117px;
+            padding-left: 35px;
+            line-height: 35px;
+        }
+        .personalIMG{
+            height: 350px;
+            width: 350px;
+            position: relative;
+            left: -149px;
+            top: -621px;
+        }
+        .personalIMG img{
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .introduce-container{
+                height: 960px;
+            }
+            .personalIMG{
+                height: 270px;
+                width: 270px;
+                left: 0;
+            }
+            .word1-circle{
+                height: 300px;
+                width: 300px;
+                top: 295px;
+                left: 120px;
+            }
+            .word1{
+                font-size: 18px;
+                padding-top: 50px;
+                padding-left: 55px;
+            }
+            .word2-circle{
+                height: 400px;
+                width: 400px;
+                top: 260px;
+                left: 5px;
+            }
+            .word2{
+                font-size: 18px;
+                padding-top: 90px;
+                padding-left: 42px;
+            }
+        }
+
+        .history-container{
+            height: 1200px;
+        }
+        .history-item{
+            width: 730px;
+            height: 200px;
+            border: 1px solid rgb(215, 212, 212);
+            margin-top: 30px;
+            position: relative;
+            left: 25%;
+        }
+        .history-item:hover{
+            color: white;
+            background-color: var(--main-color-hover);
+            transition: 0.7s;
+        }
+        .history-item h2{
+            font-size: 22px;
+            color: var(--main-color);
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 10px;
+        }
+        .history-item p{
+            font-size: 18px;
+            margin-top: 15px;
+            margin-left: 23px;
+            margin-right: 10px;
+        }
+        .work-details{
+            line-height: 27px;
+        }
+        .lesson-details{
+            line-height: 27px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .history-container{
+                width: 450px;
+                height: 1660px;
+            }
+        
+            .history-item{
+                width: 100%;
+                height: 300px;
+                left: 15px;
+            }
+        }
+
+        .website-link{
+            font-size: 1.4rem;
+            margin-top: -5px;
+            margin-bottom: 13px;
+            margin-left: 200px;
+        }
+        .website-link a{
+            color: var(--main-color);
+        }
+        .website-link a:hover{
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 768px) {
+            .website-link{
+                margin-bottom: 16px; 
+                margin-left: 22%;
+            }
+        }
+
+        .collection-container{
+            width: 750px;
+            height: 750px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 20px;
+        }
+        .collection-item{
+            width: 47%;
+            height: 300px;
+            margin: 5px 10px;
+            box-sizing: border-box;
+        }
+        .collection-item img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .collection-item p{
+            font-size: 18px;
+            color: rgb(133, 132, 132);
+            padding: 20px 10px 5px 10px;
+            text-indent: 16px;
+            line-height: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .collection-container{
+                width: 600px;
+                height: 1160px;
+                margin-left: 18%;
+            }
+            .order0{
+                order: 1;
+            }
+            .order1{
+                order: 0;
+            }
+
+        }
+
+        .message-container{
+            height: 500px;
+            font-size: 18px;
+            margin-left: 200px;
+            line-height: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .message-container{
+                max-width: 600px;
+                margin-left: 15%;
+            }
+        }
+        .copyright{
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: var(--main-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+            <img src="image/header_photo.jpg" alt="Use my photo as the symbol web image.">
+    </header>
+    <nav class="nav">
+        <div id="nav-top" class="nav-top container-fluid">
+            <ul>
+                <li><a href="#introduce-title">個人資料</a></li>
+                <li><a href="#history-title">過往經歷</a></li>
+                <li><a href="#collection-title">網頁作品</a></li>
+                <li><a href="#message-title">留言給我</a></li>
+            </ul>
+        </div>
+    </nav>
+    <a href="#nav-top">
+        <div class="return-top">
+            <p>TOP</p>
+        </div>
+    </a>
+    <div id="introduce-title" class="title">
+        <h1>個人資料</h1>
+    </div>
+    <div class="introduce-container">
+        <div class="wordsGroup">
+            <div class="word1-circle">
+                <div class="word1">
+                    <p>姓名：張絲羽<br>(Annie Chang)</p>
+                    <p>生日：1993/07/17</p>
+                    <p>E-mail：yuchang370@gmail.com</p>
+                </div>
+            </div>
+            <div class="word2-circle">
+                <div class="word2">
+                    <p>學歷：淡江大學日文系</p>
+                    <p>轉職動機：<br>2020年在補習班上了短期的網頁設計課程之後，有意進一步學習網頁設計的相關知識，希望讓自己擁有外語以外的一技之長，加強在職場上的競爭力。</p>
+                </div>
+            </div>
+            <div class="personalIMG">
+                <img src="image/personal_photo.jpg" alt="Personal picture.">
+            </div>
+        </div>
+    </div>
+    <div id="history-title" class="title">
+        <h1>過往經歷</h1>
+    </div>
+    <div class="history-container">
+        <div class="history-item">
+            <h2>2016</h2>
+            <p>淡江大學日文系畢業。</p>
+        </div>
+        <div class="history-item">
+            <h2>2017</h2>
+            <p>任職於萬國法律事務所的專利組。</p>
+            <p class="work-details">
+                ．工作內容包含專利程序之申請書製作及送件(新案/答辯/年費繳納等)、信函報告及請款、期限控管及提醒、回覆客戶提問等事宜。
+                <br>
+                ．由於合作的主管所負責的客戶以國外客戶居多，需要運用到大量的英文及日文能力。
+            </p>
+        </div>
+        <div class="history-item">
+            <h2>2020</h2>
+            <p>在7月－8月期間於補習班上了約一個多月的網頁設計初學者課程。</p>
+            <p class="lesson-details">
+                ．課程內容以Html和CSS為主，RWD和Javascript等相關概念因時間關係僅簡略帶過。
+                <br>
+                ．結業時製作了一個網頁，並上台向大家簡單說明用什麼概念製作，以及製作過程中所遇到的問題，再由講師協助解惑。
+            </p>
+        </div>
+        <div class="history-item">
+            <h2>2022</h2>
+            <p>2月底自萬國法律事務所離職。</p>
+        </div>
+        <div class="history-item">
+            <h2>Now</h2>
+            <p>參與前端班的職訓課程，水深火熱中。</p>
+        </div>
+    </div>
+    <div id="collection-title" class="title">
+        <h1>網頁作品</h1>
+    </div>
+    <div class="website-link">
+        <a href="website/collection-2020.html" target="_blank">2020年補習班結業網頁成品</a>
+    </div>
+    <div class="collection-container">
+        <div class="collection-item">
+            <img src="image/website-photo1.jpg" alt="The first photo for the website designed on August 2020.">
+        </div>
+        <div class="collection-item">
+            <p>2020年補習班設計課的網頁製作並沒有特別限定主題，因此我想要製作一個和自己最喜歡的刺蝟有關的網頁，正好當時常關注的刺蝟飼主都是在Instagram上面發文，就決定製作介紹刺蝟IG帳號的網頁。</p>
+        </div>
+        <div class="collection-item order0">
+            <p>製作過程中遇到不少排版上的問題，經常會有版面無法如自己所想去呈現的情形，例如右圖的棋盤式六宮格也是經過好幾次的修改才終於成功的結果。</p>
+        </div>
+        <div class="collection-item order1">
+            <img src="image/website-photo2.jpg" alt="The second photo for the website designed on August 2020.">
+        </div>
+    </div>
+    <div id="message-title" class="title">
+        <h1>留言給我</h1>
+    </div>
+    <div class="message-container">
+        <form action="" method="post">
+            姓名：<br><input type="text"　name="userName"><br>
+            E-mail：<br><input type="userEmail" style="width: 255px"><br>
+            如何得知這個網頁：<br>
+            <textarea name="userHowKnow" style="width: 350px; height: 60px;"></textarea><br>
+            想說的話：<br>
+            <textarea name="content" style="width: 350px; height: 120px;"></textarea><br>
+            <button type="button">送出表單</button>
+            <button type="reset">清除表單</button>
+        </form>
+    </div>
+    <footer>
+        <div class="copyright">
+            <p>© Annie Chang 2022</p>
+        </div>
+    </footer>
+
+    <script>
+
+        // let frontWord = document.querySelector("#frontWord");
+
+        // frontWord.addEventListener("click", function(){
+        //     console.log("123456");
+        // }
+
+        // function fadeOut(frontWord, 50, 0){
+        //     speed = speed || 20;
+        //     opacity = opacity || 0;
+            
+        //     var val = 100;
+        //     function(){
+        //         iBase.SetOpacity(frontWord, val );
+        //         val -= 5;
+        //         if (val >= opacity) {
+        //             setTimeout(arguments.callee, 5000);
+        //         }else if (val < 0) {
+        //             frontWord.style.display = 'none';
+        //         };
+        //     };
+        // }
+
+
+
+        // }), 5000);
+            
+        // console.log("これから自己紹介をいたします。");
+        //     console.log("では、始まりましょう。");
+
+        // let timeoutID=test.setTimeout(function(){
+        //     console.log(這是測試123);
+        // }, 5000);
+        // console.log(timeoutID);
+
+
+    </script>
+</body>
+</html>
